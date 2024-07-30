@@ -3,6 +3,7 @@ class Employee < ApplicationRecord
 
   validate :validate_parents
   validate :different_company
+  validates_uniqueness_of :email
 
   belongs_to :company, foreign_key: "company_id"
   belongs_to :manager, class_name: "Employee", optional: true
@@ -35,15 +36,17 @@ class Employee < ApplicationRecord
 
   def validate_parents
     if parents.collect(&:id).include?(self.id)
-      errors.add(:manager, "A subordinate cannot manage someone who is above him.")
+      errors.add(:manager, "- A subordinate cannot manage someone who is above him.")
     end
   end
 
   def different_company
-    manager = Employee.find manager_id
-    
-    if self.company_id != manager.company_id
-      errors.add(:manager, "The subordinate needs to be the same company.")
+    if manager_id
+      manager = Employee.find manager_id
+      
+      if self.company_id != manager.company_id
+        errors.add(:manager, "- The subordinate needs to be the same company.")
+      end
     end
   end
 
