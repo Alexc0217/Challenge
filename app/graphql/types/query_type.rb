@@ -18,14 +18,29 @@ module Types
       ids.map { |id| context.schema.object_from_id(id, context) }
     end
 
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+    
+    field :companies, [Types::CompanyType], null: false
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    def companies
+      Company.all
     end
+
+    field :company, Types::CompanyType, null: false do 
+      argument :id, ID, required: true
+    end
+
+    def company(id:)
+      Company.find id
+    end
+
+    field :employee, Types::EmployeeType, null: false do 
+      argument :id, ID, required: true
+    end
+
+    def employee(id:)
+      Employee.find(id)
+    end
+
+
   end
 end
