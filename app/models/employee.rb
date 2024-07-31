@@ -5,6 +5,8 @@ class Employee < ApplicationRecord
   validate :different_company
   validates_uniqueness_of :email
 
+  has_one_attached :avatar
+  
   belongs_to :company, foreign_key: "company_id"
   belongs_to :manager, class_name: "Employee", optional: true
   has_many :subordinates, class_name: "Employee", foreign_key: 'manager_id'
