@@ -5,6 +5,7 @@ class Mutations::CreateCompany < Mutations::BaseMutation
 
   field :company, Types::CompanyType, null: true
   field :errors, [String], null: false
+  field :message, String, null: false
 
   def resolve(name:)
     company = Company.new(name: name)
@@ -17,7 +18,8 @@ class Mutations::CreateCompany < Mutations::BaseMutation
       }
     else
       {
-        errors: company.errors.full_messages
+        errors: company.errors.full_messages,
+        message: ""
       }
     end
 
