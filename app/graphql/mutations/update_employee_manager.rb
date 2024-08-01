@@ -1,7 +1,7 @@
-class Mutations::AddEmployeeManager < Mutations::BaseMutation
+class Mutations::UpdateEmployeeManager < Mutations::BaseMutation
 
-  argument :employee_id, Integer, required: true
-  argument :manager_id, Integer, required: true
+  argument :employee_id, ID, required: true
+  argument :manager_id, ID, required: true
 
   field :employee, Types::EmployeeType, null: true 
   field :message, String, null: true
@@ -23,7 +23,7 @@ class Mutations::AddEmployeeManager < Mutations::BaseMutation
     if employee.save
       {
         employee: employee,
-        message: "Employee #{employee.name} will be managed by #{manager.name}",
+        message: "Colaborador #{employee.name} será liderado por #{manager.name}.",
         errors: []
       }
     else
