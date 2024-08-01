@@ -41,6 +41,12 @@ module Types
       Employee.find(id)
     end
 
+    field :company_employees, [Types::EmployeeType], null: false do
+      argument :company_id, ID, required: true
+    end
 
+    def company_employees(company_id:)
+      Employee.where(company_id: company_id)
+    end
   end
 end
