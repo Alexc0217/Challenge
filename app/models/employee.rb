@@ -11,6 +11,10 @@ class Employee < ApplicationRecord
   belongs_to :manager, class_name: "Employee", optional: true
   has_many :subordinates, class_name: "Employee", foreign_key: 'manager_id'
 
+  scope :recent, ->  {
+    order(created_at: :desc)
+  }
+
   def parents
     parents = []
     current_employee = self
