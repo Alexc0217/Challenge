@@ -16,6 +16,7 @@ export const CREATE_COMPANY = gql`
         id
         name
       }
+      message
       errors
     }
   }

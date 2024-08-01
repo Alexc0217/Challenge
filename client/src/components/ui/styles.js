@@ -58,3 +58,53 @@ export const ColoredDiv = styled.div`
 export const Image = styled.img`
   width: 100%;
 `
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+
+  h1{
+    font-weight: 100;
+    font-family: sans-serif;
+  }
+`
+
+export const BoxForm = styled.div`
+  width: 500px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 17px -6px rgba(207,203,207,1);
+  -moz-box-shadow: 0px 0px 17px -6px rgba(207,203,207,1);
+  box-shadow: 0px 0px 17px -6px rgba(207,203,207,1);
+
+  @media(max-width: 430px){
+    width: 80%;
+  }
+`
+
+export const DivForm = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 50px 30px;
+  gap: 20px;
+  height: 100%;
+`
+
+export const FormStyled = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+  @media(max-width: 430px){
+    min-width: 100px;
+  }
+`

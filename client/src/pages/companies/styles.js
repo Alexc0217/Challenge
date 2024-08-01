@@ -59,6 +59,14 @@ export const Content = styled.div`
   padding: 0px 90px 0 0;
 `
 
+export const EmptyEmployees = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 24px;
+`
+
 export const Employees = styled.div`
   display: flex;
   flex-direction: row;

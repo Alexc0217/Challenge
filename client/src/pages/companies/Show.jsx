@@ -12,7 +12,8 @@ import { CompanyBox,
   EmployeeInfos,
   Label,
   EmployeeActions,
-  ActionButton
+  ActionButton,
+  EmptyEmployees
 } from "./styles";
 import Button from '@mui/material/Button';
 import { CircularProgress, Select, MenuItem, FormControl, InputLabel } from "@mui/material";
@@ -120,7 +121,7 @@ export default function Show(){
           </Link>
         </Employees>
         <EmployeesBox>
-          {renderEmployees()}
+          {data.companyEmployees.employees.length > 0 ? renderEmployees() : (<EmptyEmployees>Não há colaboradores cadastrado nessa empresa.</EmptyEmployees>)}
         </EmployeesBox>
       </Content>
     </CompanyBox>
