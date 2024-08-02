@@ -2,9 +2,10 @@ import {React, useState} from "react";
 import { useMutation } from '@apollo/client';
 import {SwalError, SwalSuccess } from "../../components/ui"
 import { CREATE_COMPANY } from "../../graphQL/company_queries";
-import { Button, CircularProgress } from "@mui/material";
-import { Container, DivForm, FormStyled } from "../../components/ui/styles";
+import { Button } from "@mui/material";
+import { DivForm, FormStyled } from "../../components/ui/styles";
 import { CustomInput } from "../../components/ui/CustomInput";
+import Loading from "../../components/ui/Loading";
 
 function Form() {
   const [name, setName] = useState('');
@@ -26,7 +27,7 @@ function Form() {
     createCompany({ variables: { name } });
   };
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <Loading />;
 
   return (
     <DivForm>

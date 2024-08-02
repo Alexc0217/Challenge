@@ -3,9 +3,10 @@ import { useMutation } from '@apollo/client';
 import {SwalError, SwalSuccess } from "../../components/ui"
 import { CREATE_EMPLOYEE } from "../../graphQL/employee_queries";
 import { useParams } from "react-router-dom";
-import { Button, CircularProgress } from "@mui/material";
+import { Button } from "@mui/material";
 import { DivForm, FormStyled } from "../../components/ui/styles";
 import { CustomInput } from "../../components/ui/CustomInput";
+import Loading from "../../components/ui/Loading";
 
 function Form() {
   const [name, setName] = useState('');
@@ -31,7 +32,7 @@ function Form() {
     createEmployee({ variables: { name, email, role, companyId: company_id } });
   };
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <Loading />;
 
   return (
     <DivForm>

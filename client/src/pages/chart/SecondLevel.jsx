@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { GET_EMPLOYEE_SECOND_LEVEL } from "../../graphQL/employee_queries";
 import { useParams } from "react-router-dom";
 import Chart from '../../components/ui/Chart';
-import { CircularProgress } from "@mui/material";
 import { SwalError } from "../../components/ui";
+import Loading from "../../components/ui/Loading";
 
 export default function SecondLevel(){
   const { id } = useParams();
@@ -14,7 +14,7 @@ export default function SecondLevel(){
     pollInterval: 3000,
   });
 
-  if(loading) return <CircularProgress />;
+  if(loading) return <Loading />;
   if(error) return SwalError(error.message);
 
   return(

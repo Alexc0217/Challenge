@@ -61,6 +61,8 @@ export const GET_EMPLOYEE_SECOND_LEVEL = (id) => gql`
   {
     employee(id: ${id}){
       name
+      id
+      role
       subordinates{
         name
         id

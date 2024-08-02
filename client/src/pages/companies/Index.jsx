@@ -3,21 +3,19 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { COMPANIES } from "../../graphQL/company_queries";
 import Button from '@mui/material/Button';
-import { CircularProgress } from "@mui/material";
 import { View, DivButton, Main } from "./styles";
 import Card from "../../components/ui/Card";
 import Qulture from "../../assets/images/qulture.png";
 import SwalError from "../../components/ui/SwalError";
-import Header from "../../components/ui/Header";
+import { Empty } from "../../components/ui/styles";
+import Loading from "../../components/ui/Loading";
 
 function Index(){
   const {loading, error, data} = useQuery(COMPANIES, {
     pollInterval: 3000,
   });
 
-  if(loading){
-    return <CircularProgress />
-  }
+  if(loading) return <Loading />
 
   if(error){ 
     SwalError(error.message);
@@ -41,6 +39,9 @@ function Index(){
           !error && renderCards()
         }
       </Main>
+      {
+        data.companies.length < 1 && <Empty>Não há empresas. Crie uma nova.</Empty>
+      }
     </View>
   )
 }
