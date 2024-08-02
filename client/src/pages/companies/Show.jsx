@@ -23,6 +23,7 @@ import { COMPANY_EMPLOYEES, UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/compan
 import { Image } from "../../components/ui/styles";
 import UserIcon from "../../assets/images/UserIcon.png"
 import {SwalError, SwalSuccess } from "../../components/ui";
+import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
 
 export default function Show(){
   const { id } = useParams();
@@ -42,6 +43,18 @@ export default function Show(){
       SwalError(error.message);
     }
   });
+
+  const [deleteEmployee] = useMutation(DELETE_EMPLOYEE, {
+    onCompleted: (response) => {
+      const data = response.deleteEmployee;
+
+      if(data.errors.length > 0) return SwalError(data.errors);
+      SwalSuccess(data.message);
+    },
+    onError: (error) => {
+      SwalError(error.message);
+    }
+  })
 
   const handleManagerChange = (employeeId, newManagerId) => {
     updateManager({ variables: { employeeId, managerId: newManagerId } });
@@ -98,7 +111,7 @@ export default function Show(){
           <ActionButton variant="contained" size="small">
             Ver liderados dos liderados
           </ActionButton>
-          <ActionButton variant="contained" size="small">
+          <ActionButton variant="contained" size="small" onClick={() => (deleteEmployee({variables: {id: employee.id}}))}>
             Apagar colaborador
           </ActionButton>
         </EmployeeActions>
