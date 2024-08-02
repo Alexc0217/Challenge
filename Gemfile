@@ -28,6 +28,10 @@ gem "jbuilder"
 
 gem "graphql"
 
+gem 'apollo_upload_server', '2.1'
+
+gem 'rack-cors'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

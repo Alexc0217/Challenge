@@ -5,9 +5,15 @@ class Employee < ApplicationRecord
   validate :different_company
   validates_uniqueness_of :email
 
+  has_one_attached :avatar
+  
   belongs_to :company, foreign_key: "company_id"
   belongs_to :manager, class_name: "Employee", optional: true
   has_many :subordinates, class_name: "Employee", foreign_key: 'manager_id'
+
+  scope :recent, ->  {
+    order(created_at: :desc)
+  }
 
   def parents
     parents = []
@@ -19,17 +25,6 @@ class Employee < ApplicationRecord
     end
 
     parents
-  end
-
-  def all_children 
-    children = []
-    
-    subordinates.each do |subordinate|
-      children << subordinate
-      children.concat(subordinate.all_children)
-    end
-
-    children
   end
 
   private 
