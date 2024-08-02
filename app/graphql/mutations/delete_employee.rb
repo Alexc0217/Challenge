@@ -1,6 +1,6 @@
 class Mutations::DeleteEmployee < Mutations::BaseMutation
 
-  argument :id, Integer, required: true
+  argument :id, ID, required: true
 
   field :employee, Types::EmployeeType, null: true
   field :message, String, null: false
@@ -8,8 +8,12 @@ class Mutations::DeleteEmployee < Mutations::BaseMutation
 
   def resolve(id:)
     employee = Employee.find id
+    manager = employee.manager
+    subordinates = employee.subordinates
 
-    if employee.destroy 
+    if employee.destroy
+      subordinates.update_all(manager_id: manager.id) if subordinates.any? && manager
+
       {
         employee: employee,
         message: "Employee #{employee.name} removed successfuly.",
@@ -18,7 +22,8 @@ class Mutations::DeleteEmployee < Mutations::BaseMutation
     else
       {
         employee: employee,
-        errors: employee.errors.full_messages
+        errors: employee.errors.full_messages,
+        message: ""
       }
     end
 
