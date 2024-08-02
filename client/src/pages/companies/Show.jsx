@@ -1,4 +1,4 @@
-import { React, useCallback} from "react";
+import { React } from "react";
 import { CompanyBox, 
   SideBar,
   Content,
@@ -10,10 +10,9 @@ import { CompanyBox,
 } from "./styles";
 import Button from '@mui/material/Button';
 import { Link, useParams } from "react-router-dom";
-import { useQuery, useMutation } from '@apollo/client';
-import { COMPANY_EMPLOYEES, UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/company_queries";
-import {SwalError, SwalSuccess } from "../../components/ui";
-import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
+import { useQuery } from '@apollo/client';
+import { COMPANY_EMPLOYEES } from "../../graphQL/company_queries";
+import { SwalError} from "../../components/ui";
 import Loading from "../../components/ui/Loading";
 import EmployeeCard from "./EmployeeCard";
 
@@ -23,34 +22,6 @@ export default function Show(){
   const {loading, error, data} = useQuery(COMPANY_EMPLOYEES(id), {
     pollInterval: 3000,
   });
-
-  const [updateManager] = useMutation(UPDATE_EMPLOYEE_MANAGER, {
-    onCompleted: (response) => {
-      const data = response.updateEmployeeManager;
-      
-      if(data.errors.length > 0) return SwalError(data.errors);
-      SwalSuccess(data.message);
-    }, 
-    onError: (error) => {
-      SwalError(error.message);
-    }
-  });
-
-  const [deleteEmployee] = useMutation(DELETE_EMPLOYEE, {
-    onCompleted: (response) => {
-      const data = response.deleteEmployee;
-
-      if(data.errors.length > 0) return SwalError(data.errors);
-      SwalSuccess(data.message);
-    },
-    onError: (error) => {
-      SwalError(error.message);
-    }
-  })
-
-  const handleManagerChange = useCallback((employeeId, newManagerId) => {
-    updateManager({ variables: { employeeId, managerId: newManagerId } });
-  }, [updateManager]);
   
   if(loading) return <Loading />
 

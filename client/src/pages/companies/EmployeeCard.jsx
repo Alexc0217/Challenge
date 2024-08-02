@@ -1,8 +1,12 @@
-import React from "react";
+import { React, useCallback } from "react";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Image } from "../../components/ui/styles";
 import UserIcon from "../../assets/images/UserIcon.png"
+import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
+import { useMutation } from '@apollo/client';
+import { UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/company_queries";
+import {SwalError, SwalSuccess } from "../../components/ui";
 import {
   CardEmployee,
   CardRight,
@@ -15,6 +19,34 @@ import {
 
 export default function EmployeeCard({employee, employees}){
   let navigate = useNavigate();
+
+  const [updateManager] = useMutation(UPDATE_EMPLOYEE_MANAGER, {
+    onCompleted: (response) => {
+      const data = response.updateEmployeeManager;
+      
+      if(data.errors.length > 0) return SwalError(data.errors);
+      SwalSuccess(data.message);
+    }, 
+    onError: (error) => {
+      SwalError(error.message);
+    }
+  });
+
+  const [deleteEmployee] = useMutation(DELETE_EMPLOYEE, {
+    onCompleted: (response) => {
+      const data = response.deleteEmployee;
+
+      if(data.errors.length > 0) return SwalError(data.errors);
+      SwalSuccess(data.message);
+    },
+    onError: (error) => {
+      SwalError(error.message);
+    }
+  })
+  
+  const handleManagerChange = useCallback((employeeId, newManagerId) => {
+    updateManager({ variables: { employeeId, managerId: newManagerId } });
+  }, [updateManager]);
 
   return(
     <CardEmployee key={employee.id}>
