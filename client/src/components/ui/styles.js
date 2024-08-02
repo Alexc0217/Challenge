@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   width: fit-content;
+  min-width: 100vw;
   height: 100vh;
   background-color: whitesmoke;
 `
@@ -10,8 +11,16 @@ export const TreeCard = styled.div`
   padding: 5px;
   display: inline-block;
   &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
+  }
+`
+
+export const Empty = styled.div`
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 30px;
 `
 
 export const CardTop = styled.div`

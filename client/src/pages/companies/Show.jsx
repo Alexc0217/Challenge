@@ -17,7 +17,7 @@ import { CompanyBox,
 } from "./styles";
 import Button from '@mui/material/Button';
 import { CircularProgress, Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation } from '@apollo/client';
 import { COMPANY_EMPLOYEES, UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/company_queries";
 import { Image } from "../../components/ui/styles";
@@ -27,6 +27,7 @@ import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
 
 export default function Show(){
   const { id } = useParams();
+  let navigate = useNavigate();
 
   const {loading, error, data} = useQuery(COMPANY_EMPLOYEES(id), {
     pollInterval: 3000,
@@ -102,16 +103,16 @@ export default function Show(){
           </EmployeeInfos>
         </CardRight>
         <EmployeeActions>
-          <ActionButton variant="contained" size="small">
+          <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/pairs/${employee.id}`)}>
             Ver colaboradores do mesmo nível
           </ActionButton>
-          <ActionButton variant="contained" size="small">
+          <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/subordinates/${employee.id}`)}>
             Ver liderados
           </ActionButton>
-          <ActionButton variant="contained" size="small">
+          <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/subordinates-second-level/${employee.id}`)}>
             Ver liderados dos liderados
           </ActionButton>
-          <ActionButton variant="contained" size="small" onClick={() => (deleteEmployee({variables: {id: employee.id}}))}>
+          <ActionButton variant="contained" type="danger" size="small" onClick={() => (deleteEmployee({variables: {id: employee.id}}))}>
             Apagar colaborador
           </ActionButton>
         </EmployeeActions>
@@ -128,7 +129,7 @@ export default function Show(){
       </SideBar>
       <Content>
         <Employees>
-          <EmployeesTitle>Employees</EmployeesTitle>
+          <EmployeesTitle>Colaboradores ({data.companyEmployees.employees.length})</EmployeesTitle>
           <Link to={`/employees/new/${id}`}>
             <Button variant="contained" size="large">Adicionar novo colaborador</Button>
           </Link>

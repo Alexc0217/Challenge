@@ -26,3 +26,53 @@ export const DELETE_EMPLOYEE = gql`
     }
   }
 `
+
+export const GET_EMPLOYEE_PAIRS = (id) => gql`
+  {
+    employee(id: ${id}){
+      name
+      id
+      role
+      pairs{
+        name
+        id
+        role
+      }
+    }
+  }
+`
+
+export const GET_EMPLOYEE_SUBORDINATES = (id) => gql`
+  {
+    employee(id: ${id}){
+      name
+      id
+      role
+      subordinates{
+        name
+        id
+        role
+      }
+    }
+  }
+`
+
+export const GET_EMPLOYEE_SECOND_LEVEL = (id) => gql`
+  {
+    employee(id: ${id}){
+      name
+      subordinates{
+        name
+        id
+        email
+        role
+        subordinates{
+          id
+          name
+          email
+          role
+        }
+      }
+    }
+  }
+`

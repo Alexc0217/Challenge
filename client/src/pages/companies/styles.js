@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const View = styled.div`
-  background-color: #03002e;
+  background-color: whitesmoke;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@ export const EmployeeActions = styled.div`
 
 export const ActionButton = styled.button`
   min-width: 100px;
-  background-color: #1976d2;
+  background-color: ${(props) => props.type == "danger" ? "#D70040" : "#1976d2"};
   border-radius: 4px;
   text-transform: uppercase;
   outline: 0;
@@ -150,6 +150,6 @@ export const ActionButton = styled.button`
   cursor: pointer;
 
   &:hover{
-    background-color: #2164a6;
+    background-color: ${(props) => props.type == "danger" ? "#9A2A2A" : "#2164a6"};
   }
 `
