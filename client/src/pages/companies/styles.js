@@ -96,6 +96,10 @@ export const CardEmployee = styled.div`
   background-color: white;
   border-radius: 5px;
   justify-content: space-between;
+
+  @media(max-width: 1024px){
+    max-height: 500px;
+  }
 `
 
 export const CardRight = styled.div`
