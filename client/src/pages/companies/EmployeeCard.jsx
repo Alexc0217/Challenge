@@ -5,7 +5,7 @@ import { Image } from "../../components/ui/styles";
 import UserIcon from "../../assets/images/UserIcon.png"
 import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
 import { useMutation } from '@apollo/client';
-import { UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/company_queries";
+import { UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/employee_queries";
 import {SwalError, SwalSuccess } from "../../components/ui";
 import {
   CardEmployee,
