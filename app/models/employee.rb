@@ -31,7 +31,7 @@ class Employee < ApplicationRecord
 
   def validate_parents
     if parents.collect(&:id).include?(self.id)
-      errors.add(:manager, "- A subordinate cannot manage someone who is above him.")
+      errors.add(:manager, "- #{I18n.t("errors.messages.validate_parents")}")
     end
   end
 
@@ -40,7 +40,7 @@ class Employee < ApplicationRecord
       manager = Employee.find manager_id
       
       if self.company_id != manager.company_id
-        errors.add(:manager, "- The subordinate needs to be the same company.")
+        errors.add(:manager, "- #{I18n.t("errors.messages.validate_company")}")
       end
     end
   end

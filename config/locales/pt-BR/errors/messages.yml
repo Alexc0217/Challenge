@@ -1,0 +1,5 @@
+pt-BR:
+  errors:
+    messages:
+      validate_parents: Um colaborador não pode ser gestor de alguém que está acima dele.
+      validate_company: O colaborador precisa ser da mesma empresa.

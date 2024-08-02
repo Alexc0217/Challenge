@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        company:
+          taken: "Outra empresa já está cadastrada com esse nome."
+          attributes:
+            name:
+              required: "É necessário um nome válido para a empresa ser criada."

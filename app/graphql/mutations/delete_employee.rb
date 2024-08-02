@@ -16,7 +16,7 @@ class Mutations::DeleteEmployee < Mutations::BaseMutation
 
       {
         employee: employee,
-        message: "Employee #{employee.name} removed successfuly.",
+        message: I18n.t("graph_ql.mutations.delete_employee.success", name: employee.name),
         errors: []
       }
     else

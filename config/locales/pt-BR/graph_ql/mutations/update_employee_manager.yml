@@ -1,0 +1,5 @@
+pt-BR:
+  graph_ql:
+    mutations:
+      update_employee_manager:
+        success: 'Colaborador %{employee_name} será liderado por %{manager_name}.'

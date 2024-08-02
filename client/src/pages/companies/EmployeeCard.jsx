@@ -25,7 +25,7 @@ export default function EmployeeCard({employee, employees}){
       const data = response.updateEmployeeManager;
       
       if(data.errors.length > 0) return SwalError(data.errors);
-      SwalSuccess(data.message);
+      SwalSuccess({message: data.message});
     }, 
     onError: (error) => {
       SwalError(error.message);
@@ -37,7 +37,7 @@ export default function EmployeeCard({employee, employees}){
       const data = response.deleteEmployee;
 
       if(data.errors.length > 0) return SwalError(data.errors);
-      SwalSuccess(data.message);
+      SwalSuccess({message: data.message});
     },
     onError: (error) => {
       SwalError(error.message);

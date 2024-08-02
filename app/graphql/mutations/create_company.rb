@@ -14,7 +14,7 @@ class Mutations::CreateCompany < Mutations::BaseMutation
       {
         company: company, 
         errors: [],
-        message: "Empresa criada com sucesso."
+        message: I18n.t("graph_ql.mutations.create_company.success")
       }
     else
       {

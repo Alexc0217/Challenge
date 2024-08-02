@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        employee:
+          taken: "já em uso. Por favor, digite outro e-mail ou recupere sua conta."
+          attributes:
+            company:
+              required: "Necessário o ID de uma empresa para o colaborador ser criado."

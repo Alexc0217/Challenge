@@ -1,0 +1,5 @@
+pt-BR:
+  graph_ql:
+    mutations:
+      create_company:
+        success: Empresa criada com sucesso.
