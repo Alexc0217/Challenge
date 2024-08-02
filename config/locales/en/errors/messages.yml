@@ -1,5 +1,5 @@
 pt-BR:
   errors:
     messages:
-      validate_parents: A subordinate cannot manage someone who is above him.
+      validate_ancestors: A subordinate cannot manage someone who is above him.
       validate_company: The subordinate needs to be the same company.

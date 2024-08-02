@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
   include Chart
 
-  validate :validate_parents
+  validate :validate_ancestors
   validate :different_company
   validates_uniqueness_of :email
 
@@ -15,23 +15,23 @@ class Employee < ApplicationRecord
     order(created_at: :desc)
   }
 
-  def parents
-    parents = []
+  def ancestors
+    ancestors = []
     current_employee = self
 
     while current_employee.manager
-      parents << current_employee.manager
+      ancestors << current_employee.manager
       current_employee = current_employee.manager
     end
 
-    parents
+    ancestors
   end
 
   private 
 
-  def validate_parents
-    if parents.collect(&:id).include?(self.id)
-      errors.add(:manager, "- #{I18n.t("errors.messages.validate_parents")}")
+  def validate_ancestors
+    if ancestors.collect(&:id).include?(self.id)
+      errors.add(:manager, "- #{I18n.t("errors.messages.validate_ancestors")}")
     end
   end
 
