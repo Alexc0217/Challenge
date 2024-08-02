@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   width: fit-content;
-  min-width: 100vw;
+  min-width: 100%;
   height: 100vh;
   background-color: whitesmoke;
 `

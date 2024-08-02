@@ -8,6 +8,7 @@ import { View, DivButton, Main } from "./styles";
 import Card from "../../components/ui/Card";
 import Qulture from "../../assets/images/qulture.png";
 import SwalError from "../../components/ui/SwalError";
+import Header from "../../components/ui/Header";
 
 function Index(){
   const {loading, error, data} = useQuery(COMPANIES, {
