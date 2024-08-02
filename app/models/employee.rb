@@ -27,17 +27,6 @@ class Employee < ApplicationRecord
     parents
   end
 
-  def all_children 
-    children = []
-    
-    subordinates.each do |subordinate|
-      children << subordinate
-      children.concat(subordinate.all_children)
-    end
-
-    children
-  end
-
   private 
 
   def validate_parents
