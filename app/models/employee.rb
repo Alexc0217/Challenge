@@ -4,6 +4,8 @@ class Employee < ApplicationRecord
   validate :validate_ancestors
   validate :different_company
   validates_uniqueness_of :email
+  validates :name, presence: true
+  validates :email, presence: true
 
   has_one_attached :avatar
   
