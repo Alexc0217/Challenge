@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import MainWrapper from "../components/wrappers/MainWrapper";
+
 import CompaniesIndex from "../pages/companies/Index";
 import CompaniesNew from "../pages/companies/New";
 import CompaniesShow from "../pages/companies/Show";
@@ -12,15 +14,15 @@ import SecondLevel from "../pages/chart/SecondLevel";
 
 export default () => (
   <Routes>
-    <Route path="/" element={<CompaniesIndex />} />
+    <Route path="/" element={<MainWrapper><CompaniesIndex /></MainWrapper>} />
 
-    <Route path="/companies" element={<CompaniesIndex />} />
-    <Route path="/companies/new" element={<CompaniesNew />} />
-    <Route path="/companies/:id" element={<CompaniesShow />} />
+    <Route path="/companies" element={<MainWrapper><CompaniesIndex /></MainWrapper>} />
+    <Route path="/companies/new" element={<MainWrapper><CompaniesNew /></MainWrapper>} />
+    <Route path="/companies/:id" element={<MainWrapper><CompaniesShow /></MainWrapper>} />
 
-    <Route path="/employees/new/:company_id" element={<EmployeesNew />} />
-    <Route path="/employees/pairs/:id" element={<Pair />} />
-    <Route path="/employees/subordinates/:id" element={<Subordinates />} />
-    <Route path="/employees/subordinates-second-level/:id" element={<SecondLevel />} />
+    <Route path="/employees/new/:company_id" element={<MainWrapper><EmployeesNew /></MainWrapper>} />
+    <Route path="/employees/pairs/:id" element={<MainWrapper><Pair /></MainWrapper>} />
+    <Route path="/employees/subordinates/:id" element={<MainWrapper><Subordinates /></MainWrapper>} />
+    <Route path="/employees/subordinates-second-level/:id" element={<MainWrapper><SecondLevel /></MainWrapper>} />
   </Routes>
 )
