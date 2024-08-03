@@ -59,7 +59,7 @@ function Form() {
           label="Cargo" 
           placeholder="Cargo" 
         />
-        <Button type="submit" variant="contained" color="success" disabled={invalidEmail}>Criar Colaborador</Button>
+        <Button type="submit" variant="contained" color="success" disabled={invalidEmail} id="submit">Criar Colaborador</Button>
       </FormStyled>
     </DivForm>
   );

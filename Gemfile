@@ -34,6 +34,10 @@ gem 'rack-cors'
 
 gem 'rspec-rails', '~> 4.0.0'
 
+gem 'capybara'                  
+
+gem 'selenium-webdriver'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -79,5 +83,6 @@ group :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'factory_bot_rails'
+  gem 'database_cleaner-active_record'
 end
 gem "graphiql-rails", group: :development
