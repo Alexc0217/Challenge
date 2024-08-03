@@ -7,17 +7,15 @@ import { CardActionArea } from '@mui/material';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { COMPANY } from '../../navigation/routes';
+import { pathWithParams } from '../../utils/pathWithParams';
 
 export default function Card(props) {
   const navigate = useNavigate();
 
-  function redirect(){
-    navigate(`/companies/${props.id}`)
-  }
-
   return (
     <CardMui sx={{ maxWidth: 345 }}>
-      <CardActionArea onClick={() => redirect()}>
+      <CardActionArea onClick={() => navigate(pathWithParams(COMPANY.SHOW, {id: props.id}))}>
         <CardMedia
           component="img"
           height="300"
@@ -30,7 +28,7 @@ export default function Card(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="large" onClick={() => redirect()}>Ver empresa</Button>
+          <Button size="large">Ver empresa</Button>
         </CardActions>
       </CardActionArea>
     </CardMui>

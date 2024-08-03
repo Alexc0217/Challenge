@@ -7,6 +7,8 @@ import { DELETE_EMPLOYEE } from "../../graphQL/employee_queries";
 import { useMutation } from '@apollo/client';
 import { UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/employee_queries";
 import {SwalError, SwalSuccess } from "../../components/ui";
+import { EMPLOYEE } from "../../navigation/routes";
+import { pathWithParams } from "../../utils/pathWithParams";
 import {
   CardEmployee,
   CardRight,
@@ -80,13 +82,13 @@ export default function EmployeeCard({employee, employees}){
         </EmployeeInfos>
       </CardRight>
       <EmployeeActions>
-        <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/pairs/${employee.id}`)}>
+        <ActionButton variant="contained" size="small" onClick={() => navigate(pathWithParams(EMPLOYEE.PAIRS, {id: employee.id}))}>
           Ver colaboradores do mesmo nível
         </ActionButton>
-        <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/subordinates/${employee.id}`)}>
+        <ActionButton variant="contained" size="small" onClick={() => navigate(pathWithParams(EMPLOYEE.SUBORDINATES, {id: employee.id}))}>
           Ver liderados
         </ActionButton>
-        <ActionButton variant="contained" size="small" onClick={() => navigate(`/employees/subordinates-second-level/${employee.id}`)}>
+        <ActionButton variant="contained" size="small" onClick={() => navigate(pathWithParams(EMPLOYEE.SECOND_LEVEL, {id: employee.id}))}>
           Ver liderados dos liderados
         </ActionButton>
         <ActionButton variant="contained" type="danger" size="small" onClick={() => (deleteEmployee({variables: {id: employee.id}}))}>
