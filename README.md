@@ -1,24 +1,56 @@
-# README
+#README
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Challenge
+Bem-vindo! Este README fornece as instruções necessárias para clonar, configurar e testar o projeto.
+## Clonando o Repositório
+1.1.  Clone o repositório  usando o seguinte comando:
+   
+    git clone https://github.com/Alexc0217/Challenge.git
 
-Things you may want to cover:
+1.2.  Entre na pasta do projeto:
 
-* Ruby version
+     cd Challenge
 
-* System dependencies
+## Configuração do Ambiente
+2.1.  Instale as dependências Ruby  com  o  comando:
+   
+    bundle install
 
-* Configuration
+2.2.  Crie as bases de dados:
+   
+    rails db:create
 
-* Database creation
+2.3.  Execute as migrações do banco de dados:
+   
+    bundle exec rails db:migrate
 
-* Database initialization
+2.4. Abra uma nova aba no terminal, e entre na pasta ```client```.
 
-* How to run the test suite
+2.5. instale  as dependências do React com:
 
-* Services (job queues, cache servers, search engines, etc.)
+    sudo npm install --legacy-peer-deps
 
-* Deployment instructions
+Caso esteja utilizando o sistema operacional Windows, abra o terminal com permissão de administrador.
 
-* ...
+## Executando o Servidor
+3.1.  Antes de rodar os testes, inicie o servidor Rails:
+
+    rails s
+
+3.2.  Em uma aba  separada, vá para a pasta `client` e inicie o client:
+
+    cd client
+
+    sudo npm start
+
+## Rodando os Testes
+Para executar os testes, use o comando:
+    
+    rspec spec/*
+
+Lembre-se, para rodar os testes do servidor você deve estar na pasta ```Challenge```.
+  
+---
+
+Certifique-se de seguir estas etapas para configurar o ambiente corretamente e realizar testes. Se tiver alguma dúvida ou problema, consulte a documentação ou entre em contato.
