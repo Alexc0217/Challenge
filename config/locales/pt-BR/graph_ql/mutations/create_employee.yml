@@ -1,0 +1,5 @@
+pt-BR:
+  graph_ql:
+    mutations:
+      create_employee:
+        success: Colaborador criado com sucesso.

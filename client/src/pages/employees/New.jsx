@@ -3,10 +3,10 @@ import Form from "./Form";
 import { useQuery } from '@apollo/client';
 import { GET_COMPANY } from "../../graphQL/company_queries";
 import { SwalError } from "../../components/ui"
-import { CircularProgress } from "@mui/material";
 import { Container } from "../../components/ui/styles";
 import { BoxForm } from "../../components/ui/styles";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/ui/Loading";
 
 function New(){
   const {company_id} = useParams();
@@ -14,7 +14,7 @@ function New(){
     pollInterval: 3000,
   });
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <Loading />;
   if (error) return SwalError(error.message);
 
   return (

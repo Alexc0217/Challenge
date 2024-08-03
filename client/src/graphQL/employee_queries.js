@@ -61,6 +61,8 @@ export const GET_EMPLOYEE_SECOND_LEVEL = (id) => gql`
   {
     employee(id: ${id}){
       name
+      id
+      role
       subordinates{
         name
         id
@@ -76,3 +78,16 @@ export const GET_EMPLOYEE_SECOND_LEVEL = (id) => gql`
     }
   }
 `
+
+export const UPDATE_EMPLOYEE_MANAGER = gql`
+  mutation UpdateEmployeeManager($employeeId: ID!, $managerId: ID!) {
+    updateEmployeeManager(input: {employeeId: $employeeId, managerId: $managerId}) {
+      employee{
+        name
+        id
+      }
+      message
+      errors
+    }
+  }
+`;

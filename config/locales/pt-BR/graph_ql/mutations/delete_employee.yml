@@ -1,0 +1,5 @@
+pt-BR:
+  graph_ql:
+    mutations:
+      delete_employee:
+        success: "Colaborador %{name} deletado com sucesso."

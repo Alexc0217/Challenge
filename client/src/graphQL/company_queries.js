@@ -46,16 +46,3 @@ export const COMPANY_EMPLOYEES = (id) => gql`
     }
   }
 `
-
-export const UPDATE_EMPLOYEE_MANAGER = gql`
-  mutation UpdateEmployeeManager($employeeId: ID!, $managerId: ID!) {
-    updateEmployeeManager(input: {employeeId: $employeeId, managerId: $managerId}) {
-      employee{
-        name
-        id
-      }
-      message
-      errors
-    }
-  }
-`;

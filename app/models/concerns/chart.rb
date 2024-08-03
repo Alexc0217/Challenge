@@ -21,7 +21,6 @@ module Chart
     end
   end
 
-
   private 
 
   def build_hierarchy(employee)

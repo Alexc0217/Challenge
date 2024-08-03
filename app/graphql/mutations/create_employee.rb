@@ -16,7 +16,7 @@ class Mutations::CreateEmployee < Mutations::BaseMutation
       {
         employee: employee,
         errors: [],
-        message: "Colaborador criado com sucesso."
+        message: I18n.t("graph_ql.mutations.create_employee.success")
       }
     else
       {

@@ -68,10 +68,6 @@ function Chart(props){
             {employee.subordinates.length < 1 && <Empty>Não há colaboradores que são liderados por {employee.name}. :(</Empty>} 
           </>
         )
-      default:
-        <>
-
-        </>
     }
   }
   

@@ -23,7 +23,7 @@ class Mutations::UpdateEmployeeManager < Mutations::BaseMutation
     if employee.save
       {
         employee: employee,
-        message: "Colaborador #{employee.name} será liderado por #{manager.name}.",
+        message: I18n.t("graph_ql.mutations.update_employee_manager.success", employee_name: employee.name, manager_name: manager.name),
         errors: []
       }
     else
