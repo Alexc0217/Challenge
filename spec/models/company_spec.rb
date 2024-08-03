@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'ffaker'
 
 describe Company do
   context "relationship" do
