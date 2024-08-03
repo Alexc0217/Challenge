@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import { useQuery } from '@apollo/client';
-import { GET_COMPANY } from "../../graphQL/company_queries";
+import { GET_COMPANY } from "../../graphQL/companyQueries";
 import { SwalError } from "../../components/ui"
 import { Container } from "../../components/ui/styles";
 import { BoxForm } from "../../components/ui/styles";
@@ -10,7 +10,10 @@ import Loading from "../../components/ui/Loading";
 
 function New(){
   const {company_id} = useParams();
-  const {loading, error, data} = useQuery(GET_COMPANY(company_id), {
+  const {loading, error, data} = useQuery(GET_COMPANY, {
+    variables: {
+      id: company_id,
+    },
     pollInterval: 3000,
   });
 

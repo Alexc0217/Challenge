@@ -4,10 +4,7 @@ import "../index.css";
 
 function App() {
   return (
-    <>
-      <RouterConfig />
-    </>
-
+    <RouterConfig />
   );
 }
 
