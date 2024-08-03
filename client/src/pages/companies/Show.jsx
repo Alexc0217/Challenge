@@ -11,7 +11,7 @@ import { CompanyBox,
 import Button from '@mui/material/Button';
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/client';
-import { COMPANY_EMPLOYEES } from "../../graphQL/company_queries";
+import { COMPANY_EMPLOYEES } from "../../graphQL/companyQueries";
 import { SwalError } from "../../components/ui";
 import { EMPLOYEE } from "../../navigation/routes";
 import { pathWithParams } from "../../utils/pathWithParams";
@@ -21,7 +21,10 @@ import EmployeeCard from "./EmployeeCard";
 export default function Show(){
   const { id } = useParams();
 
-  const {loading, error, data} = useQuery(COMPANY_EMPLOYEES(id), {
+  const {loading, error, data} = useQuery(COMPANY_EMPLOYEES, {
+    variables: {
+      id: id,
+    },
     pollInterval: 3000,
   });
   

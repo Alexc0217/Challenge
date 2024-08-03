@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
-import { COMPANIES } from "../../graphQL/company_queries";
+import { COMPANIES } from "../../graphQL/companyQueries";
 import Button from '@mui/material/Button';
 import { View, DivButton, Main } from "./styles";
 import Card from "../../components/ui/Card";
@@ -24,7 +24,7 @@ function Index(){
 
   function renderCards(){
     return data.companies.map((company) => (
-      <Card title={company.name} image={Qulture} alt="Company Logo" id={company.id} />
+      <Card title={company.name} image={Qulture} alt="Company Logo" id={company.id} key={company.id} />
     ))
   }
 

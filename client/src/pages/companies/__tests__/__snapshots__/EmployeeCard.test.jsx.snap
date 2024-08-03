@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeCard Component Snapshot matches the snapshot 1`] = `
+<div
+  className="sc-eEPDDI crhsec"
+>
+  <div
+    className="sc-gutikT jLThts"
+  >
+    <div
+      className="sc-huvEkS fotIpO"
+    >
+      <img
+        className="sc-iCZwEW jXrbTg"
+        src="UserIcon.png"
+      />
+    </div>
+    <div
+      className="sc-fLVwEd iRiZeL"
+    >
+      <p
+        className="sc-gLXSEc chuanv"
+      >
+        Nome: 
+        Alex Moura
+      </p>
+      <p
+        className="sc-gLXSEc chuanv"
+      >
+        E-mail: 
+        alex.moura@outlook.com
+      </p>
+      <p
+        className="sc-gLXSEc chuanv"
+      >
+        Cargo: 
+        Developer
+      </p>
+      <div
+        className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+        style={
+          Object {
+            "marginTop": "8px",
+          }
+        }
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeSmall MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={true}
+        >
+          Selecione o Gestor
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall  css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          onClick={[Function]}
+        >
+          <div
+            aria-controls=":r0:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={0}
+          >
+            Bruna Souza
+          </div>
+          <input
+            aria-hidden={true}
+            aria-invalid={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+            value="2"
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-14lo706"
+            >
+              <span>
+                Selecione o Gestor
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-bSlUec iApYxM"
+  >
+    <button
+      className="sc-jcHdAB fGmA-Dy"
+      onClick={[Function]}
+      size="small"
+      variant="contained"
+    >
+      Ver colaboradores do mesmo nível
+    </button>
+    <button
+      className="sc-jcHdAB fGmA-Dy"
+      onClick={[Function]}
+      size="small"
+      variant="contained"
+    >
+      Ver liderados
+    </button>
+    <button
+      className="sc-jcHdAB fGmA-Dy"
+      onClick={[Function]}
+      size="small"
+      variant="contained"
+    >
+      Ver liderados dos liderados
+    </button>
+    <button
+      className="sc-jcHdAB gkgReA"
+      onClick={[Function]}
+      size="small"
+      type="danger"
+      variant="contained"
+    >
+      Apagar colaborador
+    </button>
+  </div>
+</div>
+`;
