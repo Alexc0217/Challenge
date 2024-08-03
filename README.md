@@ -29,7 +29,7 @@ Bem-vindo! Este README fornece as instruções necessárias para clonar, configu
 
 2.5. instale  as dependências do React com:
 
-    sudo npm install --legacy-peer-deps
+    sudo npm install
 
 Caso esteja utilizando o sistema operacional Windows, abra o terminal com permissão de administrador.
 
