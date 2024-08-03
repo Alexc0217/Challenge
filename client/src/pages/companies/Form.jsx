@@ -33,13 +33,14 @@ function Form() {
     <DivForm>
       <FormStyled onSubmit={handleSubmit}>
         <CustomInput 
-          name={name} 
+          name={"name"}
+          id={"name"}
           onChange={(e) => setName(e.target.value)} 
           label="Nome da empresa" 
           placeholder="Nome da empresa" 
           required 
         />
-        <Button type="submit" variant="contained" color="success">Criar empresa</Button>
+        <Button type="submit" variant="contained" color="success" id="submit">Criar empresa</Button>
       </FormStyled>
     </DivForm>  
   );
