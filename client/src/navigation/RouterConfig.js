@@ -13,6 +13,7 @@ import EmployeesNew from "../pages/employees/New";
 import Pair from "../pages/chart/Pairs";
 import Subordinates from "../pages/chart/Subordinates";
 import SecondLevel from "../pages/chart/SecondLevel";
+import NotFound from "../components/navigation/NotFound";
 
 export default () => (
   <Routes>
@@ -26,5 +27,7 @@ export default () => (
     <Route path={EMPLOYEE.PAIRS} element={<MainWrapper><Pair /></MainWrapper>} />
     <Route path={EMPLOYEE.SUBORDINATES} element={<MainWrapper><Subordinates /></MainWrapper>} />
     <Route path={EMPLOYEE.SECOND_LEVEL} element={<MainWrapper><SecondLevel /></MainWrapper>} />
+
+    <Route path="/*" element={<MainWrapper><NotFound /></MainWrapper>} />
   </Routes>
 )
