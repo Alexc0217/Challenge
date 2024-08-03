@@ -9,6 +9,7 @@ import Qulture from "../../assets/images/qulture.png";
 import SwalError from "../../components/ui/SwalError";
 import { Empty } from "../../components/ui/styles";
 import Loading from "../../components/ui/Loading";
+import { COMPANY } from "../../navigation/routes";
 
 function Index(){
   const {loading, error, data} = useQuery(COMPANIES, {
@@ -30,7 +31,7 @@ function Index(){
   return (
     <View>
       <DivButton>
-        <Link to="/companies/new">
+        <Link to={COMPANY.NEW}>
           <Button variant="contained" size="large">Criar nova empresa</Button>
         </Link>
       </DivButton>

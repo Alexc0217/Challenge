@@ -7,6 +7,8 @@ import { Button } from "@mui/material";
 import { DivForm, FormStyled } from "../../components/ui/styles";
 import { CustomInput } from "../../components/ui/CustomInput";
 import Loading from "../../components/ui/Loading";
+import { COMPANY } from "../../navigation/routes";
+import { pathWithParams } from "../../utils/pathWithParams";
 
 function Form() {
   const [name, setName] = useState('');
@@ -20,7 +22,7 @@ function Form() {
       const data = response.createEmployee;
       
       if(data.errors.length > 0) return SwalError(data.errors);
-      SwalSuccess({message: data.message, redirect: `/companies/${company_id}`});
+      SwalSuccess({message: data.message, redirect: pathWithParams(COMPANY.SHOW, {id: company_id}) });
     },
     onError: (error) => {
       SwalError(error.message);

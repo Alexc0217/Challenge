@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import { DivForm, FormStyled } from "../../components/ui/styles";
 import { CustomInput } from "../../components/ui/CustomInput";
 import Loading from "../../components/ui/Loading";
+import { COMPANY } from "../../navigation/routes";
 
 function Form() {
   const [name, setName] = useState('');
@@ -15,7 +16,7 @@ function Form() {
       const data = response.createCompany;
 
       if(data.errors.length > 0) return SwalError(data);
-      SwalSuccess({message: data.message, redirect: "/companies"});
+      SwalSuccess({message: data.message, redirect: COMPANY.INDEX});
     },
     onError: (error) => {
       SwalError(error.message);

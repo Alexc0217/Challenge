@@ -12,7 +12,9 @@ import Button from '@mui/material/Button';
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { COMPANY_EMPLOYEES } from "../../graphQL/company_queries";
-import { SwalError} from "../../components/ui";
+import { SwalError } from "../../components/ui";
+import { EMPLOYEE } from "../../navigation/routes";
+import { pathWithParams } from "../../utils/pathWithParams";
 import Loading from "../../components/ui/Loading";
 import EmployeeCard from "./EmployeeCard";
 
@@ -45,7 +47,7 @@ export default function Show(){
       <Content>
         <Employees>
           <EmployeesTitle>Colaboradores ({data.companyEmployees.employees.length})</EmployeesTitle>
-          <Link to={`/employees/new/${id}`}>
+          <Link to={pathWithParams(EMPLOYEE.NEW, {company_id: id})}>
             <Button variant="contained" size="large">Adicionar novo colaborador</Button>
           </Link>
         </Employees>
