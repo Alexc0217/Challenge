@@ -45,11 +45,13 @@ Caso esteja utilizando o sistema operacional Windows, abra o terminal com permis
     sudo npm start
 
 ## Rodando os Testes
-Para executar os testes, use o comando:
+Para executar os testes do back end (servidor), entre na pasta ```Challenge``` e use o comando:
     
     rspec spec/*
 
-Lembre-se, para rodar os testes do servidor você deve estar na pasta ```Challenge```.
+Para executar os testes do front end (client, snapshot tests), entre na pasta ```client``` e use o comando:
+
+    npm test -- --u
   
 ---
 
