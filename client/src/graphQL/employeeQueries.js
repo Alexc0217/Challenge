@@ -27,9 +27,9 @@ export const DELETE_EMPLOYEE = gql`
   }
 `
 
-export const GET_EMPLOYEE_PAIRS = (id) => gql`
-  {
-    employee(id: ${id}){
+export const GET_EMPLOYEE_PAIRS = gql`
+  query Employee($id: ID!){
+    employee(id: $id){
       name
       id
       role
@@ -42,9 +42,9 @@ export const GET_EMPLOYEE_PAIRS = (id) => gql`
   }
 `
 
-export const GET_EMPLOYEE_SUBORDINATES = (id) => gql`
-  {
-    employee(id: ${id}){
+export const GET_EMPLOYEE_SUBORDINATES = gql`
+  query Employee($id: ID!){
+    employee(id: $id){
       name
       id
       role
@@ -57,9 +57,9 @@ export const GET_EMPLOYEE_SUBORDINATES = (id) => gql`
   }
 `
 
-export const GET_EMPLOYEE_SECOND_LEVEL = (id) => gql`
-  {
-    employee(id: ${id}){
+export const GET_EMPLOYEE_SECOND_LEVEL = gql`
+  query Employee($id: ID!){
+    employee(id: $id){
       name
       id
       role

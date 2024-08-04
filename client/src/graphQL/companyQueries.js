@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const GET_COMPANY = (id) => gql`
-  {
-    company(id: ${id}){
+export const GET_COMPANY = gql`
+  query GetCompany($id: ID!){
+    company(id: $id){
       name
       id
     }
@@ -18,7 +18,7 @@ export const CREATE_COMPANY = gql`
       }
       message
       errors
-    }
+    }COMPANY_EMPLOYEES
   }
 `;
 
@@ -32,9 +32,9 @@ export const COMPANIES = gql`
   }
 `
 
-export const COMPANY_EMPLOYEES = (id) => gql`
-  {
-    companyEmployees(companyId: ${id}){
+export const COMPANY_EMPLOYEES = gql`
+  query CompanyEmployee($id: ID!){
+    companyEmployees(companyId: $id){
       companyName
       employees{
         name

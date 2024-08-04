@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component Snapshot matches the snapshot 1`] = `
+<div
+  className="sc-kkmypM jsPyby"
+>
+  <form
+    className="sc-dkjaqt eEMetd"
+    onSubmit={[Function]}
+  >
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-bz5ng3-MuiInputBase-root-MuiInput-root"
+      label="Nome"
+      onClick={[Function]}
+      required={true}
+      variant="outlined"
+    >
+      <input
+        className="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+        name=""
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Nome"
+        required={true}
+        style={
+          Object {
+            "fontSize": "20px",
+            "height": "40px",
+          }
+        }
+        type="text"
+      />
+    </div>
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-bz5ng3-MuiInputBase-root-MuiInput-root"
+      label="E-mail"
+      onClick={[Function]}
+      required={true}
+      variant="outlined"
+    >
+      <input
+        className="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+        name=""
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="E-mail"
+        required={true}
+        style={
+          Object {
+            "fontSize": "20px",
+            "height": "40px",
+          }
+        }
+        type="text"
+      />
+    </div>
+    <div
+      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-bz5ng3-MuiInputBase-root-MuiInput-root"
+      label="Cargo"
+      onClick={[Function]}
+      variant="outlined"
+    >
+      <input
+        className="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+        name=""
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Cargo"
+        style={
+          Object {
+            "fontSize": "20px",
+            "height": "40px",
+          }
+        }
+        type="text"
+      />
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorSuccess css-ke5b6m-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      id="submit"
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      Criar Colaborador
+    </button>
+  </form>
+</div>
+`;
