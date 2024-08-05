@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import { useMutation } from '@apollo/client';
 import {SwalError, SwalSuccess } from "../../components/ui"
-import { CREATE_COMPANY } from "../../graphQL/companyQueries";
+import { CREATE_COMPANY } from "../../graphql/companyQueries";
 import { Button } from "@mui/material";
 import { DivForm, FormStyled } from "../../components/ui/styles";
 import { CustomInput } from "../../components/ui/CustomInput";

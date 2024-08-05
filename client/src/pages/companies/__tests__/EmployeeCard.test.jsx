@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/client/testing';
 import EmployeeCard from '../EmployeeCard';
 import { MemoryRouter } from 'react-router-dom';
-import { UPDATE_EMPLOYEE_MANAGER, DELETE_EMPLOYEE } from '../../../graphQL/employeeQueries';
+import { UPDATE_EMPLOYEE_MANAGER, DELETE_EMPLOYEE } from '../../../graphql/employeeQueries';
 
 const mocks = [
   {

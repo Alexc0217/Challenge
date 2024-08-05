@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/client/testing';
 import { MemoryRouter } from 'react-router-dom';
 import Show from '../Show';
-import { COMPANY_EMPLOYEES } from '../../../graphQL/companyQueries';
+import { COMPANY_EMPLOYEES } from '../../../graphql/companyQueries';
 import { pathWithParams } from '../../../utils/pathWithParams';
 import { COMPANY } from '../../../navigation/routes';
 

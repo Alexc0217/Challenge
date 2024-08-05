@@ -1,7 +1,7 @@
 import React from "react";
 import { Main } from "../../components/ui/styles";
 import { useQuery } from '@apollo/client';
-import { GET_EMPLOYEE_PAIRS } from "../../graphQL/employeeQueries";
+import { GET_EMPLOYEE_PAIRS } from "../../graphql/employeeQueries";
 import { useParams } from "react-router-dom";
 import Chart from '../../components/ui/Chart';
 import { SwalError } from "../../components/ui";

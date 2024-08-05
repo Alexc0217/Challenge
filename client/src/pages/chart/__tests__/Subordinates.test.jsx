@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/client/testing';
 import { MemoryRouter } from 'react-router-dom';
 import Subordinates from '../Subordinates';
-import { GET_EMPLOYEE_SUBORDINATES } from '../../../graphQL/employeeQueries';
+import { GET_EMPLOYEE_SUBORDINATES } from '../../../graphql/employeeQueries';
 import { EMPLOYEE } from '../../../navigation/routes';
 import { pathWithParams } from '../../../utils/pathWithParams';
 

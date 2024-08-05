@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import { useQuery } from '@apollo/client';
-import { GET_COMPANY } from "../../graphQL/companyQueries";
+import { GET_COMPANY } from "../../graphql/companyQueries";
 import { SwalError } from "../../components/ui"
 import { Container } from "../../components/ui/styles";
 import { BoxForm } from "../../components/ui/styles";

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/client/testing';
 import Index from '../Index';
-import { COMPANIES } from '../../../graphQL/companyQueries';
+import { COMPANIES } from '../../../graphql/companyQueries';
 
 const mocks = [
   {

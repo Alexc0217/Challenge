@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MockedProvider } from '@apollo/client/testing';
 import { MemoryRouter } from 'react-router-dom';
 import SecondLevel from '../SecondLevel';
-import { GET_EMPLOYEE_SECOND_LEVEL } from '../../../graphQL/employeeQueries';
+import { GET_EMPLOYEE_SECOND_LEVEL } from '../../../graphql/employeeQueries';
 import { EMPLOYEE } from '../../../navigation/routes';
 
 const mocks = [

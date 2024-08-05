@@ -11,7 +11,7 @@ import { CompanyBox,
 import Button from '@mui/material/Button';
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/client';
-import { COMPANY_EMPLOYEES } from "../../graphQL/companyQueries";
+import { COMPANY_EMPLOYEES } from "../../graphql/companyQueries";
 import { SwalError } from "../../components/ui";
 import { EMPLOYEE } from "../../navigation/routes";
 import { pathWithParams } from "../../utils/pathWithParams";

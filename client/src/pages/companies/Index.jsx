@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
-import { COMPANIES } from "../../graphQL/companyQueries";
+import { COMPANIES } from "../../graphql/companyQueries";
 import Button from '@mui/material/Button';
 import { View, DivButton, Main } from "./styles";
 import Card from "../../components/ui/Card";

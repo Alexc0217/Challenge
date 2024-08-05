@@ -3,9 +3,9 @@ import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Image } from "../../components/ui/styles";
 import UserIcon from "../../assets/images/UserIcon.png"
-import { DELETE_EMPLOYEE } from "../../graphQL/employeeQueries";
+import { DELETE_EMPLOYEE } from "../../graphql/employeeQueries";
 import { useMutation } from '@apollo/client';
-import { UPDATE_EMPLOYEE_MANAGER } from "../../graphQL/employeeQueries";
+import { UPDATE_EMPLOYEE_MANAGER } from "../../graphql/employeeQueries";
 import {SwalError, SwalSuccess } from "../../components/ui";
 import { EMPLOYEE } from "../../navigation/routes";
 import { pathWithParams } from "../../utils/pathWithParams";
