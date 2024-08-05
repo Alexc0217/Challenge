@@ -18,39 +18,8 @@ module Types
       ids.map { |id| context.schema.object_from_id(id, context) }
     end
 
-    
-    field :companies, [Types::CompanyType], null: false
-
-    def companies
-      Company.all
-    end
-
-    field :company, Types::CompanyType, null: false do 
-      argument :id, ID, required: true
-    end
-
-    def company(id:)
-      Company.find id
-    end
-
-    field :employee, Types::EmployeeType, null: false do 
-      argument :id, ID, required: true
-    end
-
-    def employee(id:)
-      Employee.find(id)
-    end
-
-    field :company_employees, Types::CompanyEmployeesType, null: false do
-      argument :company_id, ID, required: true
-    end
-
-    def company_employees(company_id:)
-      company = Company.find company_id
-      {
-        company_name: company.name,
-        employees: company.employees.recent
-      }
-    end
+    include Types::Query::CompanyQuery
+    include Types::Query::EmployeeQuery
+    include Types::Query::CompanyEmployeesQuery
   end
 end
