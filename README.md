@@ -7,6 +7,10 @@ Bem-vindo! Este README fornece as instruções necessárias para clonar, configu
 ## Versões
 ruby: 3.0.0
 
+## URL's localhost
+<p>rails server: localhost:3000</p>
+<p>react server: localhost:3001</p>
+
 ## Clonando o Repositório
 1.1.  Clone o repositório  usando o seguinte comando:
    
