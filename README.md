@@ -3,6 +3,10 @@
 
 # Challenge
 Bem-vindo! Este README fornece as instruções necessárias para clonar, configurar e testar o projeto.
+
+## Versões
+ruby: 3.0.0
+
 ## Clonando o Repositório
 1.1.  Clone o repositório  usando o seguinte comando:
    
