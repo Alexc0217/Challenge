@@ -10,14 +10,5 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :subordinates, [Types::EmployeeType], null: true
     field :pairs, [Types::EmployeeType], null: true
-
-    def subordinates
-      object.subordinates
-    end
-
-    def pairs
-      object.pairs
-    end
-
   end
 end
