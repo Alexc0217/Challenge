@@ -18,7 +18,7 @@ export const CREATE_COMPANY = gql`
       }
       message
       errors
-    }COMPANY_EMPLOYEES
+    }
   }
 `;
 
