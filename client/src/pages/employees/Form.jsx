@@ -21,7 +21,7 @@ function Form() {
     onCompleted: (response) => {
       const data = response.createEmployee;
       
-      if(data.errors.length > 0) return SwalError(data.errors);
+      if(data.errors) return SwalError(data.errors);
       SwalSuccess({message: data.message, redirect: pathWithParams(COMPANY.SHOW, {id: company_id}) });
     },
     onError: (error) => {

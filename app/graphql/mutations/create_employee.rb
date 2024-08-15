@@ -6,8 +6,8 @@ class Mutations::CreateEmployee < Mutations::BaseMutation
   argument :role, String, required: false
 
   field :employee, Types::EmployeeType, null: true
-  field :message, String, null: false
-  field :errors, [String], null: false
+  field :message, String, null: true
+  field :errors, [String], null: true
 
   def resolve(params)
     employee = Employee.new(params)
@@ -15,14 +15,12 @@ class Mutations::CreateEmployee < Mutations::BaseMutation
     if employee.save
       {
         employee: employee,
-        errors: [],
         message: I18n.t("graph_ql.mutations.create_employee.success")
       }
     else
       {
         employee: nil,
         errors: [employee.errors.full_messages],
-        message: "",
       }
     end
   end

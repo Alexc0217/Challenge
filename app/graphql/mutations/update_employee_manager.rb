@@ -5,7 +5,7 @@ class Mutations::UpdateEmployeeManager < Mutations::BaseMutation
 
   field :employee, Types::EmployeeType, null: true 
   field :message, String, null: true
-  field :errors, [String], null: false
+  field :errors, [String], null: true
 
   def resolve(employee_id:, manager_id:)
 
@@ -24,7 +24,6 @@ class Mutations::UpdateEmployeeManager < Mutations::BaseMutation
       {
         employee: employee,
         message: I18n.t("graph_ql.mutations.update_employee_manager.success", employee_name: employee.name, manager_name: manager.name),
-        errors: []
       }
     else
       {
