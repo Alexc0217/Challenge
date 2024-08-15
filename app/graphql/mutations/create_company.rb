@@ -8,18 +8,10 @@ class Mutations::CreateCompany < Mutations::BaseMutation
   field :message, String, null: true
 
   def resolve(name:)
-    company = Company.new(name: name)
+    use_case = Companies::CreateCompanyUseCase.new(name)
 
-    if company.save
-      {
-        company: company, 
-        message: I18n.t("graph_ql.mutations.create_company.success")
-      }
-    else
-      {
-        errors: company.errors.full_messages,
-      }
-    end
+    result = use_case.call
 
+    result
   end
 end
