@@ -1,17 +1,20 @@
 class Employee < ApplicationRecord
   include Chart
 
+  before_destroy :update_manager
+
   validate :validate_ancestors
   validate :different_company
+
   validates_uniqueness_of :email
   validates :name, presence: true
   validates :email, presence: true
-
+  
   has_one_attached :avatar
   
   belongs_to :company, foreign_key: "company_id"
   belongs_to :manager, class_name: "Employee", optional: true
-  has_many :subordinates, class_name: "Employee", foreign_key: 'manager_id'
+  has_many :subordinates, class_name: "Employee", foreign_key: 'manager_id', dependent: :nullify
 
   scope :recent, ->  {
     order(created_at: :desc)
@@ -47,4 +50,7 @@ class Employee < ApplicationRecord
     end
   end
 
+  def update_manager
+    subordinates.update_all(manager_id: manager.id) if subordinates.any? && manager
+  end
 end

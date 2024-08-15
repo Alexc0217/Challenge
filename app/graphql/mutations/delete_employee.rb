@@ -8,12 +8,8 @@ class Mutations::DeleteEmployee < Mutations::BaseMutation
 
   def resolve(id:)
     employee = Employee.find id
-    manager = employee.manager
-    subordinates = employee.subordinates
 
     if employee.destroy
-      subordinates.update_all(manager_id: manager.id) if subordinates.any? && manager
-
       {
         employee: employee,
         message: I18n.t("graph_ql.mutations.delete_employee.success", name: employee.name),
