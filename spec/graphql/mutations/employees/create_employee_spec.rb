@@ -35,7 +35,7 @@ module Mutations
           json = JSON.parse(response.body)
           data = json['data']['createEmployee']
 
-          expect(data["errors"]).to be_empty
+          expect(data["errors"]).to be(nil)
 
           expect(data["employee"]).to include(
             'id' => be_present,

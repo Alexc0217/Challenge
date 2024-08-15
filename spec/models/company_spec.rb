@@ -8,6 +8,10 @@ describe Company do
   end
 
   context "validations" do
+    before do
+      Company.create!(name: FFaker::Company.name)
+    end
+
     it "should have a name and the name needs to be unique" do
       is_expected.to validate_presence_of(:name)
       is_expected.to validate_uniqueness_of(:name)
