@@ -15,7 +15,7 @@ function Form() {
     onCompleted: (response) => {
       const data = response.createCompany;
 
-      if(data.errors.length > 0) return SwalError(data);
+      if(data.errors) return SwalError(data.errors);
       SwalSuccess({message: data.message, redirect: COMPANY.INDEX});
     },
     onError: (error) => {
