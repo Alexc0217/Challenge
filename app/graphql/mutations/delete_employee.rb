@@ -7,20 +7,11 @@ class Mutations::DeleteEmployee < Mutations::BaseMutation
   field :errors, [String], null: true
 
   def resolve(id:)
-    employee = Employee.find id
+    use_case = Employees::DeleteEmployeeUseCase.new(id)
 
-    if employee.destroy
-      {
-        employee: employee,
-        message: I18n.t("graph_ql.mutations.delete_employee.success", name: employee.name),
-      }
-    else
-      {
-        employee: employee,
-        errors: employee.errors.full_messages,
-      }
-    end
+    result = use_case.call
 
+    result
   end
 
 end

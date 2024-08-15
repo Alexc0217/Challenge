@@ -10,19 +10,11 @@ class Mutations::CreateEmployee < Mutations::BaseMutation
   field :errors, [String], null: true
 
   def resolve(params)
-    employee = Employee.new(params)
-    
-    if employee.save
-      {
-        employee: employee,
-        message: I18n.t("graph_ql.mutations.create_employee.success")
-      }
-    else
-      {
-        employee: nil,
-        errors: [employee.errors.full_messages],
-      }
-    end
+    use_case = Employees::CreateEmployeeUseCase.new(params)
+
+    result = use_case.call
+
+    result
   end
 
 end
